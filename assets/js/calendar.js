@@ -6,6 +6,7 @@ $(document).ready(function() {
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 		},
+		defaultView: 'agendaWeek',
 		events: [
 			{
 				title: 'EECS202',
@@ -15,7 +16,7 @@ $(document).ready(function() {
 			},
 		],
 		editable: true,
-
+		timeFormat: 'H(:mm)'
 	});
 	// $('#todayButton').click(function(){
 	// 	console.log('yo');
