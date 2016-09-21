@@ -1,7 +1,6 @@
 var d = new Date;
-console.log('ha', getISOSDate(d));
-console.log('ymd', getYearMonthDay(getISOSDate(d)));
-console.log('map', mapToWeeklyTime('F10-10:50'));
+
+console.log('map', mapToWeeklyTime('F3-4:50'));
 // console.log('yo', n.concat('11:30:00'));
 $(document).ready(function() {
 	$('#calendar').fullCalendar('today');
@@ -15,8 +14,8 @@ $(document).ready(function() {
 		events: [
 			{
 				title: 'EECS202',
-				start: '2016-09-10T11:30',
-				end: '2016-09-10T14:50',
+				start: '2016-09-12T11:30',
+				end: '2016-09-12T14:50',
 				allDay: false,
 			},
 		],
@@ -45,7 +44,7 @@ function getISOSDate(time) {
 // map input time to the final ISOString time
 // time in format such as: M10-10:50
 function mapToWeeklyTime(time) {
-	const currentWeekday = new Date().getDay();
+	let currentWeekday = new Date().getDay();
 	// sunday is mapped to 0, convert it to 7 for computation
 	if (currentWeekday === 0) {
 		currentWeekday = 7;
@@ -75,27 +74,45 @@ function mapToWeeklyTime(time) {
 
 	//hour in form of 10-10:50, 9-9:50
 	const hour = time.substring(i);
-	let cnt = 0;
-	let index = 0;
-	while (index < hour.length) {
-		if (hour[index] === '-') {
-			if (hour.substring(0, index).indexOf(':') > 0) {
-
-			}
-		}
-		index++;
+	const duration = getStartEnd(hour);
+	if (parseInt(duration.start.substring(0,2)) > parseInt(duration.end.substring(0.2))) {
+		convertToTwentyFourFormattedHour(hour);
+		duration = getStartEnd(hour);
 	}
+	console.log('hour', hour, duration);
 
 	return realDate
+}
+
+
+// 7-10:00 => 7-22:00
+function convertToTwentyFourFormattedHour(hour) {
+	let index = 0;
+	let start;
+	let end = hour.length;
+	while (index < hour.length) {
+		if (hour[index] === '-') {
+			start = index + 1;
+		}
+
+		if (start && hour[index] === ':') {
+			end = index;
+		}
+	}
+	const newEnd = parseInt(hour.substring(start, end-start)) + 12;
+	hour.replace(hour.substring(start, end-start), newEnd.toString());
+	console.log('hour')
 }
 
 // 10-10:50 => 10:00-10:50
 function getStartEnd(hour) {
 	let index = 0;
+	let start;
+	let end;
 	while (index < hour.length) {
 		if (hour[index] === '-') {
-			const start = hour.substring(0, index);
-			const end = hour.substring(index+1);
+			start = hour.substring(0, index);
+			end = hour.substring(index+1);
 			break;
 		}
 		index++;
@@ -109,15 +126,35 @@ function getStartEnd(hour) {
 }
 
 // hour: 9:00, 9, 10:50
+// hour should be range 8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,
 function getFormattedHour(hour) {
-	let res;
+	const TWLVE_HOURS = 12;
+	const EARLIEST_CLASS = 8;
+	let res = '';
 	const zero = '0';
 	const index = hour.indexOf(':');
-	if (index > 0) {
-		if (hour.substring(0, index).length === 1) {
-			res = zero.concat(hour.substring(0, index));
+	if (index > 0) { // has ":"
+		let hourOfTime = parseInt(hour.substring(0, index));
+		if (hourOfTime < EARLIEST_CLASS) { // < 8, add 12 hours, 5 => 17
+			formattedHourOfTime = hourOfTime + TWLVE_HOURS;
+			hour = hour.replace(hour.substring(0, index), formattedHourOfTime.toString());
 		}
+		if (hour.substring(0, index).length === 1) { // in form of 9:00
+			res = zero.concat(hour); // 09:00
+		}
+		return hour;
 	}
+
+	// doesn't have ":"
+	if (parseInt(hour) < EARLIEST_CLASS) {
+		const temp = parseInt(hour) + TWLVE_HOURS;
+		hour = temp.toString();
+	}
+	if (hour.length === 1 && parseInt(hour) < EARLIEST_CLASS) {
+		res = zero.concat(hour);
+	}
+
+	return hour.concat(':00');
 }
 
 function getYearMonthDay(ISOTime) {
