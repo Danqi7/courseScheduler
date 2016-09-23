@@ -33,7 +33,26 @@ func getDepartmentCourses(url string) {
 	}
 
 	doc.Find("table").Each(func (i int, s *goquery.Selection) {
-		log.Printf(s.Html())
+		// log.Printf(s.Html())
+		s.Find("tbody").Each(func (index int, s1 *goquery.Selection) {
+			// log.Printf(s1.Html())
+
+			//find table row
+			s1.Find("tr").Each(func (ii int, s2 *goquery.Selection) {
+				log.Printf(s2.Html())
+				log.Printf("\n")
+				s2.Find("td").Each(func (rowIndex int, s3 *goquery.Selection){
+					switch rowIndex {
+					case 0:
+						number := s3.Find("a").Text()
+						log.Printf(number)
+					case 1:
+						title := s3.Find("a").Text()
+						log.Printf(title)
+					}
+				})
+			})
+		})
 	})
 
 	// bytes, err := ioutil.ReadAll(resp.Body)
