@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"log"
+	"time"
 	// "io/ioutil"
 	// "golang.org/x/net/html"
 
@@ -17,6 +18,40 @@ type Course struct {
 	Instructor []string
 	Date []string
 	Seasons []string
+}
+
+/* determines which quater the courses should load for*/
+func whichQuater() int {
+	fall := 0
+	winter := 1
+	spring := 2
+
+	monthMap := map[string]int{
+		"January": 1,
+		"February": 2,
+		"March": 3,
+		"April": 4,
+		"May": 5,
+		"June": 6,
+		"July": 7,
+		"August": 8,
+		"September": 9,
+		"October": 10,
+		"November": 11,
+		"December": 12,
+	}
+
+	month := time.Now().Month()
+	monthNum := monthMap[month]
+	if monthNum >= 9 && monthNum <= 1 {
+		return winter
+	}
+
+	if monthNum >=1 && monthNum <= 3 {
+		return spring
+	}
+
+	return fall
 }
 
 func parseTimeAndInstructor(content string) (string, string){
