@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"encoding/json"
 	"net/http"
 	"log"
 	"time"
@@ -12,16 +13,16 @@ import (
 )
 
 type Course struct {
-	Number string
-	Title string
-	Time []string
-	Instructor []string
-	Date []string
-	Seasons []string
+	Number string `json:"number"`
+	Title string `json:"title"`
+	Time string `json:"time"`
+	Instructor string `json:"instructor"`
 }
 
+const dataFile = "./courses.json"
+
 /* determines which quater the courses should load for*/
-func whichQuater() int {
+func whichQuarter() int {
 	fall := 0
 	winter := 1
 	spring := 2
@@ -42,7 +43,7 @@ func whichQuater() int {
 	}
 
 	month := time.Now().Month()
-	monthNum := monthMap[month]
+	monthNum := monthMap[string(month)]
 	if monthNum >= 9 && monthNum <= 1 {
 		return winter
 	}
@@ -73,7 +74,7 @@ func parseTimeAndInstructor(content string) (string, string){
 }
 
 func getDepartmentCourses(url string) {
-	// courses := make([]Course, 0)
+	courses := make([]Course, 0)
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Printf("A wild error has occured while crawling url %s: %s", url, err)
@@ -83,17 +84,17 @@ func getDepartmentCourses(url string) {
 
 	doc, err := goquery.NewDocumentFromResponse(resp);
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("A wild error has occured while parsing the DOM :%s", err)
 	}
-
+	var course Course;
+	var number, title, time, instructor = "", "", "", ""
+	quarter := whichQuarter()
 	doc.Find("table").Each(func (i int, s *goquery.Selection) {
 		// log.Printf(s.Html())
 		s.Find("tbody").Each(func (index int, s1 *goquery.Selection) {
 			// log.Printf(s1.Html())
-
 			//find table row
 			s1.Find("tr").Each(func (ii int, s2 *goquery.Selection) {
-				var number, title = "", ""
 				s2.Find("td").Each(func (rowIndex int, s3 *goquery.Selection){
 					switch rowIndex {
 					case 0:
@@ -101,28 +102,36 @@ func getDepartmentCourses(url string) {
 					case 1:
 						title = s3.Find("a").Text()
 					case 2:
-						inner, _ := s3.Html()
-						time, instructor := parseTimeAndInstructor(inner)
-						log.Printf("Time: %s, Instructor: %s", time, instructor)
+						if quarter == 0 {
+							inner, _ := s3.Html()
+							time, instructor = parseTimeAndInstructor(inner)
+							//log.Printf("Time: %s, Instructor: %s", time, instructor)
+						}
 					case 3:
-						// winter = s3.Html()
-						// log.Printf(s3.Html())
-						inner, _ := s3.Html()
-						time, instructor := parseTimeAndInstructor(inner)
-						log.Printf("Time: %s, Instructor: %s", time, instructor)
+						if quarter == 1 {
+							inner, _ := s3.Html()
+							time, instructor = parseTimeAndInstructor(inner)
+							//log.Printf("Time: %s, Instructor: %s", time, instructor)
+						}
 					case 4:
-						// spring = s3.Html()
-						// log.Printf(s3.Html())
-						inner, _ := s3.Html()
-						time, instructor := parseTimeAndInstructor(inner)
-						log.Printf("Time: %s, Instructor: %s", time, instructor)
+						if quarter == 2 {
+							inner, _ := s3.Html()
+							time, instructor = parseTimeAndInstructor(inner)
+							//log.Printf("Time: %s, Instructor: %s", time, instructor)
+						}
 					}
 				})
-				// log.Printf("%s %s %s %s %s\n",number, title, fall, winter, spring)
-				// course := Course{number, title, time, instructor, }
+
+				course = Course{number, title, time, instructor}
+				log.Println(course)
+				courses = append(courses, course)
 			})
+
 		})
 	})
+
+	log.Println(len(courses))
+	log.Printf("%v", courses)
 
 	// bytes, err := ioutil.ReadAll(resp.Body)
 	// if err != nil {
