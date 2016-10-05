@@ -7,6 +7,10 @@ import (
 	"log"
 	"time"
 	"io/ioutil"
+	"sync"
+	"os"
+	"io"
+	"bytes"
 	// "golang.org/x/net/html"
 
 	"github.com/PuerkitoBio/goquery"
@@ -20,6 +24,8 @@ type Course struct {
 }
 
 const dataFile = "./courses.json"
+
+var courseMutex = new(sync.Mutex)
 
 /* determines which quater the courses should load for*/
 func whichQuarter() int {
@@ -155,13 +161,42 @@ func getDepartmentCourses(url string) {
 
 }
 
+func handleCourses(w http.ResponseWriter, r *http.Request) {
+	//since multiple request can come in at once, have a lock around file operation
+	courseMutex.Lock()
+	defer courseMutex.Unlock()
+
+	_, err := os.Stat(dataFile)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Unable to stat the data file (%s): %s", dataFile, err), http.StatusInternalServerError)
+		return
+	}
+
+	courseData, err := ioutil.ReadFile(dataFile)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Unable to read the date file (%s): %s", dataFile, err), http.StatusInternalServerError)
+		return
+	}
+
+	if r.Method == "GET" {
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		io.Copy(w, bytes.NewReader(courseData))
+	} else {
+		//don't know the method, error
+		http.Error(w, fmt.Sprintf("Unsupported method: %s", r.Method), http.StatusMethodNotAllowed)
+	}
+}
+
 func handler(w http.ResponseWriter, r *http.Request) {
-	url := "http://www.mccormick.northwestern.edu/eecs/courses/index.html"
-	getDepartmentCourses(url);
+	// url := "http://www.mccormick.northwestern.edu/eecs/courses/index.html"
+	// getDepartmentCourses(url);
 	fmt.Fprintf(w, "Hi %s", r.URL.Path[1:])
 }
 
 func main() {
+	http.HandleFunc("/api/courses", handleCourses)
 	http.HandleFunc("/", handler)
 	log.Println("Server started at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
