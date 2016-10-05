@@ -162,6 +162,7 @@ func getDepartmentCourses(url string) {
 }
 
 func handleCourses(w http.ResponseWriter, r *http.Request) {
+
 	//since multiple request can come in at once, have a lock around file operation
 	courseMutex.Lock()
 	defer courseMutex.Unlock()

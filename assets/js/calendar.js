@@ -22,6 +22,7 @@ $(document).ready(function() {
 		editable: true,
 		timeFormat: 'H(:mm)'
 	});
+	loadCourses();
 	// $('#todayButton').click(function(){
 	// 	console.log('yo');
 	// 	$('#calendar').fullCalendar('today');
@@ -182,4 +183,19 @@ function getYearMonthDay(ISOTime) {
 		'month': month,
 		'day': day,
 	};
+}
+
+function loadCourses() {
+	const url = "http://localhost:8080/api/courses";
+	let courses;
+	$.ajax({
+		url: url,
+		dataType: 'json',
+		type: "GET",
+		cache: false,
+		success: function(data) {
+			courses = data;
+			return courses;
+		}
+	});
 }
