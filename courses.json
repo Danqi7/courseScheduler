@@ -1,0 +1,1328 @@
+[
+	{
+		"number": "100",
+		"title": "Electrons, Photons, and Bits: Adventures in Electrical and Computer Engineering",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "101",
+		"title": "An Intro to Computer Science for Everyone",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "DTC 106",
+		"title": "Design, Thinking, and Communication",
+		"time": "TBA",
+		"instructor": "TBA"
+	},
+	{
+		"number": "DTC 106",
+		"title": "Design, Thinking, and Communication",
+		"time": "TBA",
+		"instructor": "TBA"
+	},
+	{
+		"number": "DTC 106",
+		"title": "Design, Thinking, and Communication",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "DTC 106",
+		"title": "Design, Thinking, and Communication",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "110",
+		"title": "Intro to Computer Programming",
+		"time": "4-4:50 TuThF \u0026#34;Python\u0026#34; ",
+		"instructor": "Cossairt"
+	},
+	{
+		"number": "111",
+		"title": "Fundamentals of Computer Programming I",
+		"time": "11-11:50 MTuWF",
+		"instructor": "Sood"
+	},
+	{
+		"number": "202",
+		"title": "Intro to Electrical Engineering",
+		"time": "10-10:50 MTuWF ",
+		"instructor": "Taflove / Mikhelson / Mohseni "
+	},
+	{
+		"number": "203",
+		"title": "Intro to Computer Engineering",
+		"time": "11-11:50 MTuWF",
+		"instructor": "CH-Wu"
+	},
+	{
+		"number": "205",
+		"title": "Fundamentals of Computer System Software",
+		"time": "2-2:50 MTuWF",
+		"instructor": "Joseph"
+	},
+	{
+		"number": "GEN_ENG 205",
+		"title": "Engineering Analysis",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "EA1 205",
+		"title": "Engineering Analysis ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "EA1 205",
+		"title": "Engineering Analysis ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "EA1 205",
+		"title": "Engineering Analysis ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "EA1 206",
+		"title": "Engineering Analysis (Honors) ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "COGSCI 207",
+		"title": "Introduction to Cognitive Modeling",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "211",
+		"title": "Fundamentals of Computer Programming II",
+		"time": "2-3:20 TuTh",
+		"instructor": "Tov"
+	},
+	{
+		"number": "212",
+		"title": "Mathematical Foundations of Computer Science",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "213",
+		"title": "Intro to Computer Systems",
+		"time": "11-12:30 TuTh",
+		"instructor": "Bischof"
+	},
+	{
+		"number": "214",
+		"title": "Data Structures and Data Management",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "221",
+		"title": "Fundamentals of Circuits",
+		"time": "9-9:50 MTuWF",
+		"instructor": "Plonus"
+	},
+	{
+		"number": "222",
+		"title": "Fundamentals of Signals and Systems ",
+		"time": "2-2:50 MTuWF",
+		"instructor": "Katsaggelos"
+	},
+	{
+		"number": "223",
+		"title": "Fundamentals of Solid State Engineering",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "224",
+		"title": "Fundamentals of Electromagnetics and Photonics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "225",
+		"title": "Fundamentals of Electronics",
+		"time": "3-3:50 MTuWF",
+		"instructor": "C.H. Wu"
+	},
+	{
+		"number": "230",
+		"title": "Programming for Engineers",
+		"time": "12:30-1:50 TuTh",
+		"instructor": "Tov"
+	},
+	{
+		"number": "250",
+		"title": "Physical Electronics and Devices",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "295",
+		"title": "Intensive Program Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "301",
+		"title": "Introduction to Robotics Laboratory",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "302",
+		"title": "Probabilistic Systems and Random Signals",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "303",
+		"title": "Advanced Digital Logic Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "307",
+		"title": "Communications Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "308",
+		"title": "Applied Electromagnetics and Photonics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "313",
+		"title": "Tangible Interaction Design and Learning",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "317",
+		"title": "Data Management and Information Processing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "321",
+		"title": "Programming Languages",
+		"time": "12:30-1:50 MW",
+		"instructor": "St-Amour"
+	},
+	{
+		"number": "322",
+		"title": "Compiler Construction",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "325",
+		"title": "Artificial Intelligence Programming",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "BME 325",
+		"title": "Introduction to Medical Imaging",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "328",
+		"title": "Numerical Methods for Engineers ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "330",
+		"title": "Human Computer Interaction",
+		"time": "1-1:50 MWF",
+		"instructor": "Horn"
+	},
+	{
+		"number": "332",
+		"title": "Introduction to Computer Vision",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "333",
+		"title": "Intro to Communication Networks",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "334",
+		"title": "Introduction to Computer Vision",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "335",
+		"title": "Intro to the Theory of Computation",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "336",
+		"title": "Design \u0026 Analysis of Algorithms",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "337",
+		"title": "Intro to Semantic Information Processing",
+		"time": "9:30-10:50 TuTh",
+		"instructor": "Birnbaum"
+	},
+	{
+		"number": "338",
+		"title": "Practicum in Intelligent Information Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "339",
+		"title": "Intro to Databases",
+		"time": "4-4:50 MWF",
+		"instructor": "Duggan"
+	},
+	{
+		"number": "340",
+		"title": "Introduction to Computer Networking",
+		"time": "12:30-1:50 WF",
+		"instructor": "Kuzmanovic"
+	},
+	{
+		"number": "343",
+		"title": "Operating Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "344",
+		"title": "Design of Problem Solvers",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Forbus"
+	},
+	{
+		"number": "345",
+		"title": "Distributed Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "346",
+		"title": "Microprocessor System Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "347",
+		"title": "Microprocessor Systems Project I",
+		"time": "9-9:50 MWF ",
+		"instructor": "Henschen"
+	},
+	{
+		"number": "347-2",
+		"title": "Microprocessor Systems Project II",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "348",
+		"title": "Intro to Artificial Intelligence",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "349",
+		"title": "Machine Learning",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "350",
+		"title": "Introduction to Computer Security",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "351",
+		"title": "Intro to Computer Graphics",
+		"time": "10-10:50 MWF",
+		"instructor": "Tumblin"
+	},
+	{
+		"number": "352",
+		"title": "Machine Perception of Music \u0026 Audio",
+		"time": "3:30-4:50 MW",
+		"instructor": "Pardo"
+	},
+	{
+		"number": "354",
+		"title": "Network Penetration and Security",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "355",
+		"title": "Asic and FPGA Design",
+		"time": "11-11:50 MWF",
+		"instructor": "S. Memik"
+	},
+	{
+		"number": "356",
+		"title": "Introduction to Formal Verification",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Zhou"
+	},
+	{
+		"number": "357",
+		"title": "Introduction to VLSI CAD",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "358",
+		"title": "Intro to Parallel Computing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "359",
+		"title": "Digital Signal Processing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "360",
+		"title": "Introduction to Feedback Systems",
+		"time": "10-10:50 MWF",
+		"instructor": "Freeman"
+	},
+	{
+		"number": "361",
+		"title": "Computer Architecture I ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "362",
+		"title": "Computer Architecture Project",
+		"time": "11-12:20 TuTh",
+		"instructor": "TBA"
+	},
+	{
+		"number": "363",
+		"title": "Digital Filtering",
+		"time": "1-1:50 MWF",
+		"instructor": "Butz"
+	},
+	{
+		"number": "368, 468",
+		"title": "Programming Massively Parallel Processors with CUDA",
+		"time": "2:00-3:20 TuTh",
+		"instructor": "Hardavellas"
+	},
+	{
+		"number": "369",
+		"title": "Introduction to Sensor Networks",
+		"time": "3:30-4:50 MW",
+		"instructor": "Trajcevski"
+	},
+	{
+		"number": "370",
+		"title": "Computer Game Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "371",
+		"title": "Knowledge Representation and Reasoning",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "372, 472",
+		"title": "Designing and Constructing Models with Multi-Agent Languages",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "374",
+		"title": "Intro to Digital Control",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "378",
+		"title": "Digital Communications",
+		"time": "11-11:50 MWF",
+		"instructor": "C.C. Lee"
+	},
+	{
+		"number": "379",
+		"title": "Intro to Lasers and Fiber Optics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "380",
+		"title": "Wireless Communications",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "381",
+		"title": "Electronic Properties of Materials",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "382",
+		"title": "Photonic Information Processing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "383",
+		"title": "Fiber-Optic Communications",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Yuen"
+	},
+	{
+		"number": "384",
+		"title": "Solid State Electronic Devices",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "385",
+		"title": "Optoelectronics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "386",
+		"title": "Computational Electromagnetics and Photonics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "388",
+		"title": "Nanotechnology",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "389",
+		"title": "Superconductivity and its Applications",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Aydin"
+	},
+	{
+		"number": "390",
+		"title": "Intro to Robotics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "391",
+		"title": "CMOS VLSI Circuits Design",
+		"time": "12:30-1:50 TuTh ",
+		"instructor": "Gu"
+	},
+	{
+		"number": "392",
+		"title": "VLSI Systems Design Projects",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "393, 493",
+		"title": "Design and Analysis of High-Speed Integrated Circuits",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "394",
+		"title": "Software Project Management \u0026 Development",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395",
+		"title": "Game Design and Development",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395",
+		"title": "Probabilistic Systems and Random Signals",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395",
+		"title": "Software Construction",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395-20",
+		"title": "Data as Art",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Special Topics in Machine Learning",
+		"time": "TBA",
+		"instructor": "Downey"
+	},
+	{
+		"number": "395, 495",
+		"title": "Wireless and Mobile  Health (mHealth)",
+		"time": "TuTh 5-6:30",
+		"instructor": "Alshurafa "
+	},
+	{
+		"number": "395, 495",
+		"title": "Applied Mechatronics: Quadrotor Design and Control",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Advanced Low Power Digital and Mixed-signal Integrated Circuit Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Biometrics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Building Next-Generation AI Applications with IBM Watson",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Cardiovascular Instrumentation ",
+		"time": "MWF 1-1:50",
+		"instructor": "Sahakian"
+	},
+	{
+		"number": "395, 495",
+		"title": "Cognitive Simulation for Virtual Characters ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Collaboration Technology ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Advanced Topics in Computer Architecture ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "(Special Topics) Computational Complexity ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Computational Geometry ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Computational Photography Seminar ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Introduction to Computational Photography ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Intermediate Computer Graphics ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Data Science",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Design, Technology, and Research ",
+		"time": "F 9-12",
+		"instructor": "Zhang"
+	},
+	{
+		"number": "395, 495",
+		"title": "Distributed Systems in Challenging Environments",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Introduction to Cryptography ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Introduction to Smart Grid Systems ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "(Special Topics) Embedded Systems ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "A Hands-on Course in Communication Systems ",
+		"time": "TBA",
+		"instructor": "Guo"
+	},
+	{
+		"number": "395, 495",
+		"title": "(Advanced Topics in) Quantum Electronics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Game Development Studio ",
+		"time": "MW 6-7:30",
+		"instructor": "Zubek "
+	},
+	{
+		"number": "395, 495",
+		"title": "Geospatial Vision and Visualization ",
+		"time": "M 6-9",
+		"instructor": "Chen, Xin"
+	},
+	{
+		"number": "395, 495",
+		"title": "Human-level Artificial Intelligence ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "(Special Topics) Innovation in Journalism \u0026 Technology",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Knowledge Representation \u0026 Reasoning for Game Characters",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Machine Learning: Foundations, Applications, and Algorithms",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Advanced and Persistent Threats (APT)",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Algorithmic DNA Self-Assembly (Kao) ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "TBA",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Object-Oriented Languages and Environments ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Online Advertising: A Systems Approach (Kuzmanovic)",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "The Probabilistic Method ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Programming Languages Seminar ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Social Computing and Crowd Sourcing Seminar ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Special Relativity in Optics ",
+		"time": "2-3:20 MW",
+		"instructor": "Shahriar"
+	},
+	{
+		"number": "395, 495",
+		"title": "Technology Infrastructure: Concepts, Requirements, Design and Operation ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Algorithmic and Economic Aspects of Social Networks",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Web Information Retrieval and Extraction (Downey) ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Internet-scale Experimentation",
+		"time": "TuTh 12:30-1:50",
+		"instructor": "Bustamante"
+	},
+	{
+		"number": "395, 495",
+		"title": "Technology Infrastructure: Concepts, Requirements, Design and Operation",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Introduction to Computational Learning Theory",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Concurrent Programming in Rust",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Derandomization",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Special Topics in Swarms and Multi-robot Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Algorithmic Mechanism Design ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "The Art of Multicore Concurrent Programming ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Algorithmic Techniques for Bioinformatics",
+		"time": "TuTh 3:30-4:50",
+		"instructor": "Kao"
+	},
+	{
+		"number": "395, 495",
+		"title": "Advanced Digital System Design with FPGAS",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Metamaterials and Plasmonics, and their Applications",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Kernel and Other Low-level Software Development",
+		"time": "9:30-11 TuTh",
+		"instructor": "Dinda"
+	},
+	{
+		"number": "395, 495",
+		"title": "Digital Forensics and Incident Response",
+		"time": "11-12:20 MW",
+		"instructor": "Chen \u0026amp; Ilyas"
+	},
+	{
+		"number": "395, 495",
+		"title": "Internet of Things",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Introduction to Computational Linguistics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Technology \u0026 Human Interaction",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Code Analysis and Transformation",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Engineering System Design I",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Mikhelson"
+	},
+	{
+		"number": "395, 495",
+		"title": "Engineering System Design II",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "395, 495",
+		"title": "Personal Health Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "398",
+		"title": "Electrical Engineering Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "401",
+		"title": "Fundamentals of Electronic Devices",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "402",
+		"title": "Advanced Electronic Devices",
+		"time": "TBA",
+		"instructor": "Mohseni"
+	},
+	{
+		"number": "403",
+		"title": "Quantum Semiconductors",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "404",
+		"title": "Quantum Electronics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "405",
+		"title": "Advanced Photonics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "406",
+		"title": "Nonlinear Optics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "407",
+		"title": "Quantum Optics",
+		"time": "2-3:20 TuTh",
+		"instructor": "Yuen"
+	},
+	{
+		"number": "409",
+		"title": "Semiconductor Lasers",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "410",
+		"title": "System Theory",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "418",
+		"title": "Advanced Digital Signal Processing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "420",
+		"title": "Digital Image Processing",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "421",
+		"title": "Multimedia Signal Processing",
+		"time": "TBA",
+		"instructor": "Pappas"
+	},
+	{
+		"number": "422",
+		"title": "Random Processes in Communications and Control I",
+		"time": "3:30-5:20 MW",
+		"instructor": "Berry"
+	},
+	{
+		"number": "423",
+		"title": "Random Processes in Communications and Control II",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "425",
+		"title": "Quantum Electronics II: Noise, Modulation, and Quantum Properties of Laser Emissions",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "426",
+		"title": "Signal Detection and Estimation",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "427",
+		"title": "Optical Communications",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "428",
+		"title": "Information Theory",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "429",
+		"title": "Selected Topics in Quantum Information Science and Technology",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "430",
+		"title": "Design of Interactive Learning Environments",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "431",
+		"title": "Human Perception and Electronic Media",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "432",
+		"title": "Advanced Computer Vision",
+		"time": "TuTh 11:00-12:30",
+		"instructor": "Y. Wu"
+	},
+	{
+		"number": "433",
+		"title": "Statistical Pattern Recognition",
+		"time": "2:00-3:20 TuTh",
+		"instructor": "Y. Wu"
+	},
+	{
+		"number": "438",
+		"title": "Interdisciplinary Nonlinear Dynamics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "440",
+		"title": "Advanced Networking",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "441",
+		"title": "Resource Virtualization",
+		"time": "9:30-11 TuTh",
+		"instructor": "Dinda"
+	},
+	{
+		"number": "442",
+		"title": "Dynamic Behavior of Applications, Hosts, and Networks",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "443",
+		"title": "Advanced Operating Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "450",
+		"title": "Internet Security",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "452",
+		"title": "Advanced Computer Architecture I",
+		"time": "12:30-1:50 MW",
+		"instructor": "G. Memik"
+	},
+	{
+		"number": "453",
+		"title": "Parallel Architectures",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "454",
+		"title": "Advanced Communication Networks",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "455",
+		"title": "Distributed Computing Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "457",
+		"title": "Advanced Algorithms",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "458",
+		"title": "Parallel Algorithms for VLSI Computer-Aided Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "459",
+		"title": "VLSI Algorithmics",
+		"time": "2-3:30 MW",
+		"instructor": "S. Memik"
+	},
+	{
+		"number": "463",
+		"title": "Adaptive Filters",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "469",
+		"title": "Machine Learning and Artificial Intelligence for Robotics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "472",
+		"title": "Designing and Constructing Models with Multi-Agent Languages",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "473-1",
+		"title": "NUvention: Web + Media (ENTREP 473)",
+		"time": "12:25-3:25 Tu",
+		"instructor": "Marasco/Warren"
+	},
+	{
+		"number": "473-2",
+		"title": "NUvention: Web + Media (ENTREP 473)",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "474",
+		"title": "Probabilistic Graphical Models",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "478",
+		"title": "Advanced Digital Communications",
+		"time": "2-3:20 TuTh",
+		"instructor": "Honig"
+	},
+	{
+		"number": "479",
+		"title": "Nonlinear Optimization",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Machine Learning and Artificial Intelligence for Robotics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Companion Cognitive Architecture",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Introduction to Nanophotonics and Plasmonics Science and Technology",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Introduction to Nonlinear Control Theory",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Topics in Beyond Worst-Case Analysis",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Analytical Methods in Theoretical Computer Science",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Qualitative Representations",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Statistical Optics",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "TBA",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Introduction to Database Systems",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Graduate Algorithms",
+		"time": "3:30-4:50 TuTh",
+		"instructor": "Vijayaraghavan"
+	},
+	{
+		"number": "495",
+		"title": "Distributed Optimization",
+		"time": "2-3:20 MW",
+		"instructor": "Wei"
+	},
+	{
+		"number": "495",
+		"title": "Computational Auditory Scene Analysis ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "495",
+		"title": "Mechanism Design",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "ENTREP 495",
+		"title": "NUvention Impact ",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "510",
+		"title": "Social Media Mining",
+		"time": "",
+		"instructor": ""
+	},
+	{
+		"number": "444",
+		"title": "Networking Problems in Cloud Computing",
+		"time": "",
+		"instructor": ""
+	}
+]

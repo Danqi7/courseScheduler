@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"log"
 	"time"
-	// "io/ioutil"
+	"io/ioutil"
 	// "golang.org/x/net/html"
 
 	"github.com/PuerkitoBio/goquery"
@@ -42,9 +42,10 @@ func whichQuarter() int {
 		"December": 12,
 	}
 
-	month := time.Now().Month()
-	monthNum := monthMap[string(month)]
-	if monthNum >= 9 && monthNum <= 1 {
+	month := time.Now().Month().String()
+	monthNum := monthMap[month]
+
+	if monthNum >= 9 && monthNum <= 12 {
 		return winter
 	}
 
@@ -89,6 +90,7 @@ func getDepartmentCourses(url string) {
 	var course Course;
 	var number, title, time, instructor = "", "", "", ""
 	quarter := whichQuarter()
+	log.Println(quarter);
 	doc.Find("table").Each(func (i int, s *goquery.Selection) {
 		// log.Printf(s.Html())
 		s.Find("tbody").Each(func (index int, s1 *goquery.Selection) {
@@ -132,6 +134,16 @@ func getDepartmentCourses(url string) {
 
 	log.Println(len(courses))
 	log.Printf("%v", courses)
+
+	coursesData, err := json.MarshalIndent(courses, "", "	")
+	if err != nil {
+		log.Fatal("A wild error has occured while marshal course data to json")
+	}
+
+	err = ioutil.WriteFile(dataFile, coursesData, 0644);
+	if err != nil {
+		log.Fatal("A wild error has occured while WriteFile")
+	}
 
 	// bytes, err := ioutil.ReadAll(resp.Body)
 	// if err != nil {
