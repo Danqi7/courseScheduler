@@ -1,7 +1,8 @@
-var d = new Date;
+let COURSES;
 
-console.log('map', mapToWeeklyTime('F3-4:50'));
-// console.log('yo', n.concat('11:30:00'));
+var temp = mapToWeeklyTimeArray("2-2:50 MTuWF")
+loadCourses();
+
 $(document).ready(function() {
 	$('#calendar').fullCalendar('today');
 	$('#calendar').fullCalendar({
@@ -22,12 +23,77 @@ $(document).ready(function() {
 		editable: true,
 		timeFormat: 'H(:mm)'
 	});
-	loadCourses();
-	// $('#todayButton').click(function(){
-	// 	console.log('yo');
-	// 	$('#calendar').fullCalendar('today');
-	// });
 });
+
+function loadEventsFromSource() {
+	const events = [];
+
+	if (COURSES) {
+		console.log("foo",COURSES);
+		COURSES.forEach(function(course) {
+			console.log(course)
+			const weeklyTimes = mapToWeeklyTimeArray(course.time);
+			weeklyTimes.forEach(function(weeklyTime) {
+				events.push(getFormattedEvent(weeklyTime, course.title));
+			});
+		});
+	}
+
+	console.log(events);
+}
+
+
+function getFormattedEvent(weeklyTime, title) {
+	const event = {
+		title: title,
+		start: weeklyTime.start,
+		end: weeklyTime.end,
+	};
+}
+
+//map input time loaded from server to the final ISOString time array
+//@input time string in format such as : "2-2:50 MTuWF"
+function mapToWeeklyTimeArray(time) {
+	let i = 0;
+	let hour;
+	let day;
+	const days = [];
+	while (i < time.length) {
+		if (time[i] === " ") {
+			hour = time.substring(0,i);
+			day = time.substring(i+1);
+			break;
+		}
+		i++;
+	}
+
+  let index = i+1;
+	while (index < time.length) {
+		if (time[index] === "M") {
+			days.push("M");
+			index++;
+		} else if (time[index] === "T") {
+			if (index+1 < time.length && time[index+1] == 'u') {
+				days.push("Tu");
+			} else {
+				days.push("Th");
+			}
+			index += 2;
+		} else if (time[index] === "W") {
+			days.push("W");
+			index++;
+		} else {
+			days.push("F");
+			index++;
+		}
+	}
+
+	const weeklyTimes = days.map(function(day) {
+		return mapToWeeklyTime(hour + " " + day);
+	});
+
+	console.log(weeklyTimes);
+}
 
 // get current date in ISOString format
 function getISOSDate(time) {
@@ -43,7 +109,8 @@ function getISOSDate(time) {
 }
 
 // map input time to the final ISOString time
-// time in format such as: M10-10:50
+// @input time in format such as: 10-10:50 M
+//
 function mapToWeeklyTime(time) {
 	let currentWeekday = new Date().getDay();
 	// sunday is mapped to 0, convert it to 7 for computation
@@ -60,8 +127,8 @@ function mapToWeeklyTime(time) {
 	let realDate = new Date;
 	let i = 0;
 	while (i < time.length){
-		if (parseInt(time[i])) {
-			weekday = time.substring(0,i);
+		if (time[i] === " ") {
+			weekday = time.substring(i+1);
 			//map to this weekday to real date
 			const diff = currentWeekday - weekdays[weekday];
 
@@ -74,15 +141,19 @@ function mapToWeeklyTime(time) {
 	}
 
 	//hour in form of 10-10:50, 9-9:50
-	const hour = time.substring(i);
+	const hour = time.substring(0,i);
 	const duration = getStartEnd(hour);
 	if (parseInt(duration.start.substring(0,2)) > parseInt(duration.end.substring(0.2))) {
 		convertToTwentyFourFormattedHour(hour);
 		duration = getStartEnd(hour);
 	}
-	console.log('hour', hour, duration);
 
-	return realDate
+	const weeklyTime = {
+		start: realDate + duration.start,
+		end: realDate + duration.end,
+	}
+
+	return weeklyTime;
 }
 
 
@@ -187,15 +258,15 @@ function getYearMonthDay(ISOTime) {
 
 function loadCourses() {
 	const url = "http://localhost:8080/api/courses";
-	let courses;
 	$.ajax({
 		url: url,
 		dataType: 'json',
 		type: "GET",
 		cache: false,
 		success: function(data) {
-			courses = data;
-			return courses;
+			COURSES = data;
+			console.log(COURSES);
+			loadEventsFromSource();
 		}
 	});
 }

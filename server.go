@@ -188,6 +188,8 @@ func handleCourses(w http.ResponseWriter, r *http.Request) {
 		//don't know the method, error
 		http.Error(w, fmt.Sprintf("Unsupported method: %s", r.Method), http.StatusMethodNotAllowed)
 	}
+
+	log.Println("handleCourses is called...")
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
