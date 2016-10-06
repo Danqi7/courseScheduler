@@ -1,7 +1,5 @@
-let COURSES;
-
 var temp = mapToWeeklyTimeArray("2-2:50 MTuWF")
-loadCourses();
+loadCourses(loadEventsFromSource);
 
 $(document).ready(function() {
 	$('#calendar').fullCalendar('today');
@@ -25,19 +23,15 @@ $(document).ready(function() {
 	});
 });
 
-function loadEventsFromSource() {
+function loadEventsFromSource(courses) {
 	const events = [];
-
-	if (COURSES) {
-		console.log("foo",COURSES);
-		COURSES.forEach(function(course) {
-			console.log(course)
-			const weeklyTimes = mapToWeeklyTimeArray(course.time);
-			weeklyTimes.forEach(function(weeklyTime) {
-				events.push(getFormattedEvent(weeklyTime, course.title));
-			});
+	console.log(courses);
+	courses.forEach(function(course) {
+		const weeklyTimes = mapToWeeklyTimeArray(course.time);
+		weeklyTimes.forEach(function(weeklyTime) {
+			events.push(getFormattedEvent(weeklyTime, course.title));
 		});
-	}
+	});
 
 	console.log(events);
 }
@@ -256,7 +250,7 @@ function getYearMonthDay(ISOTime) {
 	};
 }
 
-function loadCourses() {
+function loadCourses(loadEventsFromSource) {
 	const url = "http://localhost:8080/api/courses";
 	$.ajax({
 		url: url,
@@ -264,9 +258,7 @@ function loadCourses() {
 		type: "GET",
 		cache: false,
 		success: function(data) {
-			COURSES = data;
-			console.log(COURSES);
-			loadEventsFromSource();
+			loadEventsFromSource(data);
 		}
 	});
 }
