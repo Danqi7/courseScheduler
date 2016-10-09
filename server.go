@@ -196,6 +196,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// url := "http://www.mccormick.northwestern.edu/eecs/courses/index.html"
 	// getDepartmentCourses(url);
 	fmt.Fprintf(w, "Hi %s", r.URL.Path[1:])
+	log.Println(r.URL)
 }
 
 func main() {
