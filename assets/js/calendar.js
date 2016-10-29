@@ -25,15 +25,18 @@ $(document).ready(function() {
 
 function loadEventsFromSource(courses) {
 	const events = [];
-	console.log(courses);
+	console.log('bar', courses);
 	courses.forEach(function(course) {
-		const weeklyTimes = mapToWeeklyTimeArray(course.time);
-		weeklyTimes.forEach(function(weeklyTime) {
-			events.push(getFormattedEvent(weeklyTime, course.title));
-		});
+		console.log('course', course);
+		if (course.time && parseInt(course.time[0])) {
+			const weeklyTimes = mapToWeeklyTimeArray(course.time);
+			weeklyTimes.forEach(function(weeklyTime) {
+				events.push(getFormattedEvent(weeklyTime, course.title));
+			});
+		}
 	});
 
-	console.log(events);
+	// console.log('foo', events);
 }
 
 
@@ -86,7 +89,7 @@ function mapToWeeklyTimeArray(time) {
 		return mapToWeeklyTime(hour + " " + day);
 	});
 
-	console.log(weeklyTimes);
+	console.log('weeklyTimes', weeklyTimes);
 }
 
 // get current date in ISOString format
