@@ -4,11 +4,46 @@
 	<title>Course Scheduler</title>
 	<link rel='stylesheet' href='node_modules/fullcalendar/dist/fullcalendar.css' />
 	<link rel='stylesheet' href='assets/css/calendar.css'>
+	<link rel="stylesheet" href="node_modules/selectize/dist/css/selectize.css">
+	<link rel="stylesheet" href="node_modules/selectize/examples/css/stylesheet.css">
+	<link rel="stylesheet" href="node_modules/selectize/dist/css/selectize.default.css">
 	<script src='node_modules/jquery/dist/jquery.min.js'></script>
 	<script src='node_modules/moment/min/moment.min.js'></script>
 	<script src='node_modules/fullcalendar/dist/fullcalendar.js'></script>
+	<script src="node_modules/selectize/dist/js/standalone/selectize.js"></script>
+	<style type="text/css">
+		.selectize-control .option .title {
+			display: block;
+		}
+		.selectize-control .option .url {
+			font-size: 12px;
+			display: block;
+			color: #a0a0a0;
+		}
+		.selectize-control .item {
+			color: #ffffff;
+		}
+		.selectize-control .item.active {
+			color: #303030;
+		}
+	</style>
 </head>
 <body>
+	<div id="wrapper">
+			<div class="control-group">
+				<label for="select-subject">Subjects:</label>
+				<select id="select-subject" name="subjects[]" multiple class="demo-default" style="width:50%" placeholder="Select a subject...">
+				</select>
+			</div>
+	</div>
+	<div id="wrapper">
+			<div class="control-group">
+				<label for="select-course">Courses:</label>
+				<select id="select-course" name="courses[]" multiple class="demo-default" style="width:50%" placeholder="Select a course...">
+				</select>
+			</div>
+	</div>
+
 	<div id='calendar'></div>
 	<script type="text/javascript" src="assets/js/app.js"></script>
 </body>
