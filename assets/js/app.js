@@ -7,22 +7,20 @@ var select_subject, $select_subject;
 var select_course, $select_course;
 
 $select_subject = $('#select-subject').selectize({
-	plugins: ['remove_button'],
 	delimiter: ',',
-	maxItems: 5,
+	maxItems: 1,
 	valueField: 'symbol',
 	searchField: 'symbol',
 	options: [],
 	create: false,
 	render: {
 		option: function(data, escape) {
-			console.log('options: ', data);
 			return '<div class="option">' +
-					'<span class="title">' + escape(data.name) + '</span>' +
+					'<span class="title subjects">' + escape(data.name) + '</span>'
 				'</div>';
 		},
 		item: function(data, escape) {
-			return '<div class="item">' + escape(data.name) + '</div>';
+			return '<div class="item subjects">' + escape(data.name) + '</div>';
 		}
 	},
 	load: function(query, callback) {
@@ -56,8 +54,15 @@ $select_subject = $('#select-subject').selectize({
 				type: "POST",
 				data: JSON.stringify({subjects: value}),
 				success: function(data) {
-					console.log(data);
-					// callback(data);
+					// console.log(data);
+					const newData = [];
+					data.forEach((course) => {
+						course.obj = JSON.stringify(course);
+						newData.push(course);
+					});
+					select_course.enable();
+					console.log('newData', newData);
+					callback(newData);
 				},
 				error: function(error) {
 					console.log('Error : ', error);
@@ -69,15 +74,79 @@ $select_subject = $('#select-subject').selectize({
 });
 
 $select_course = $('#select-course').selectize({
-	valueField: 'name',
-	labelField: 'name',
-	searchField: ['name']
+	plugins: ['remove_button'],
+	valueField: 'obj',
+	labelField: 'title',
+	searchField: ['title'],
+	options: [],
+	create: false,
+	render: {
+		option: function(data, escape) {
+			console.log('====', data);
+			return '<div class="option">' +
+					'<span class="title subjects">' + (data.subject) + ' ' + (data.catalog_num) + ' : ' + escape(data.title) + '</span>' +
+				'</div>';
+		},
+		item: function(data, escape) {
+			return '<div class="item subjects">' + (data.subject) + ' ' + (data.catalog_num) + ' : ' + escape(data.title) + '</div>';
+		}
+	},
+	onChange: function(value) {
+		const data = [];
+		value.forEach((val) => {
+			data.push(JSON.parse(val));
+		});
+		console.log(data);
+
+		calendarData = getCalendarData(data);
+
+		$('#calendar').fullCalendar('removeEvents');
+		$('#calendar').fullCalendar('addEventSource', calendarData);
+		$('#calendar').fullCalendar('refetchEvents');
+
+	},
 });
 
 
 select_subject = $select_subject[0].selectize;
 select_course  = $select_course[0].selectize;
 
+// {
+// 	title: 'EECS202',
+// 	start: '2016-11-02T11:30',
+// 	end: '2016-11-02T14:50',
+// 	allDay: false,
+// },
+function getCalendarData(data) {
+	const calendarData = [];
+	data.forEach((course) => {
+		console.log('course', course);
+		const meeting_days = [];
+		var i;
+		for (i = 0; i < course.meeting_days.length;) {
+			const weekday = course.meeting_days.substring(i, i+2);
+			console.log('weekday', weekday);
+			meeting_days.push(weekdayToFullDate(weekday));
+			i = i + 2;
+		}
+
+		meeting_days.forEach((day) => {
+			const start = day + course.start_time;
+			const end = day + course.end_time;
+
+			calendarData.push({
+				title: course.subject + ' ' + course.catalog_num,
+				start: start,
+				end: end,
+				allDay: false,
+			});
+		});
+
+	});
+
+	console.log('calendarData', calendarData);
+	return calendarData;
+}
 
 function loadAllSubjects() {
 	// const url = API_ENDPOINT + '/subjects/' + '?' + 'key=' + API_KEY + '&' + 'term=' + TERM;
@@ -94,41 +163,31 @@ function loadAllSubjects() {
 			console.log('Error : ', error);
 		}
 	});
-	// $.getJSON(url, function(data) {
-	// 	console.log(data);
-	// });
 }
-loadAllSubjects();
-
-
-
-
 
 weekdayToFullDate('Mo');
 $(document).ready(function() {
-	$('#calendar').fullCalendar('today');
 	$('#calendar').fullCalendar({
-		header: {
-				left: 'prev,next today',
-				center: 'yo',
-				right: 'month,basicWeek,basicDay',
-		},
 		defaultView: 'agendaWeek',
-		events: [
-			{
-				title: 'EECS202',
-				start: '2016-11-02T11:30',
-				end: '2016-11-02T14:50',
-				allDay: false,
-			},
-      {
-        title: 'EECS302',
-        start: '2016-11-03T11:30',
-        end: '2016-11-03T14:50',
-        allDay: false,
-      },
+		eventColor: '#408bed',
+		overlap: true,
+		eventSources: [
+			[
+				{
+					title: 'EECS202',
+					start: '2016-11-02T11:30',
+					end: '2016-11-02T14:50',
+					allDay: false,
+				},
+			  {
+					start: '2016-11-03T11:30',
+					end: '2016-11-03T14:50',
+			    title: 'EECS302',
+			    allDay: false,
+			  },
+			],
 		],
-		editable: true,
+		editable: false,
 		timeFormat: 'H(:mm)'
 	});
 });

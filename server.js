@@ -16,19 +16,10 @@ var jsonParser = bodyParser.json();
 
 // Add headers
 app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
+     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
     next();
@@ -47,32 +38,18 @@ app.get('/api/subjects', function(req, res) {
 });
 
 app.post('/api/courses', jsonParser, function(req, res) {
-  const subjects = req.body.subjects;
-  const courses = [];
-  var cnt = 0;
-  var success = [];
-  for (var i = 0; i < subjects.length; i++) {
-    success.push(0);
-  }
-  while (cnt < subjects.length) {
-    const url = API_ENDPOINT + '/courses/' + '?' + 'key=' + API_KEY + '&' + 'term=' + TERM + '&' + 'subject=' + subjects[cnt];
-    request.get(url, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        console.log('finished with cnt: ', cnt);
-        success[cnt] = 1;
-      } else {
-        console.log('Error getting all the subjects');
-      }
-    });
-    console.log('hi', success);
-    cnt++;
-  }
+  const subject = req.body.subjects[0];
+  const url = API_ENDPOINT + '/courses/' + '?' + 'key=' + API_KEY + '&' + 'term=' + TERM + '&' + 'subject=' + subject; 
+  
+  request.get(url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body)
+    } else {
+      console.log('Error getting all the courses for subject: ', subject);
+    }
+  });
 
-  while (success.indexOf(0) != -1) {
-    console.log(success);
-  }
-
-  console.log(req.body.subjects.length);
+  console.log(subject);
 });
 
 app.listen(PORT);
