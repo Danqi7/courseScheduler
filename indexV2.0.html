@@ -12,6 +12,9 @@
 	<script src='node_modules/fullcalendar/dist/fullcalendar.js'></script>
 	<script src="node_modules/selectize/dist/js/standalone/selectize.js"></script>
 	<style type="text/css">
+		div#outerContainer {
+			background-color: red,
+		},
 		.selectize-control .option .title {
 			display: block;
 		}
@@ -32,19 +35,21 @@
 	</style>
 </head>
 <body>
-	<div id="wrapper">
-			<div class="control-group">
-				<label for="select-subject">Subjects:</label>
-				<select id="select-subject" name="subjects[]" multiple class="demo-default" style="width:50%" placeholder="Select a subject...">
-				</select>
-			</div>
-	</div>
-	<div id="wrapper">
-			<div class="control-group">
-				<label for="select-course">Courses:</label>
-				<select id="select-course" name="courses[]" multiple class="demo-default" style="width:50%" placeholder="Select a course...">
-				</select>
-			</div>
+	<div class="outerContainer">
+		<div id="wrapper">
+				<div class="control-group">
+					<label for="select-subject">Subjects:</label>
+					<select id="select-subject" name="subjects[]" multiple class="demo-default" style="width:50%" placeholder="Select a subject...">
+					</select>
+				</div>
+		</div>
+		<div id="wrapper">
+				<div class="control-group">
+					<label for="select-course">Courses:</label>
+					<select id="select-course" name="courses[]" multiple class="demo-default" style="width:50%" placeholder="Select a course...">
+					</select>
+				</div>
+		</div>
 	</div>
 
 	<div id='calendar'></div>

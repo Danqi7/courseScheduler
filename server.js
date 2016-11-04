@@ -39,8 +39,8 @@ app.get('/api/subjects', function(req, res) {
 
 app.post('/api/courses', jsonParser, function(req, res) {
   const subject = req.body.subjects[0];
-  const url = API_ENDPOINT + '/courses/' + '?' + 'key=' + API_KEY + '&' + 'term=' + TERM + '&' + 'subject=' + subject; 
-  
+  const url = API_ENDPOINT + '/courses/' + '?' + 'key=' + API_KEY + '&' + 'term=' + TERM + '&' + 'subject=' + subject;
+
   request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body)
