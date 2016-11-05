@@ -1,11 +1,29 @@
 {
-  "name": "coursescheduler",
+  "name": "courseschedular",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "#how to start 1.git clone this repo 2.node server.js 3.open the public file index.html",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Danqi Liao",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "fullcalendar": "^3.0.0",
+    "jquery-textext-master": "^0.0.0",
+    "request": "^2.76.0",
+    "selectize": "^0.12.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danqi7/courseScheduler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Danqi7/courseScheduler/issues"
+  },
+  "homepage": "https://github.com/Danqi7/courseScheduler#readme"
 }
