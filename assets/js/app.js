@@ -44,7 +44,18 @@ $select_subject = $('#select-subject').selectize({
 		console.log('wo', value);
 		if (!value.length) return;
 		select_course.disable();
+		// const currentValue = select_course.getValue();
 		select_course.clearOptions();
+		// console.log('getVal', currentValue);
+		// currentValue.forEach((val) => {
+		// 	const course = JSON.parse(val);
+		// 	course.obj = JSON.stringify(course);
+		// 	console.log('~~~~~', course);
+		// 	select_course.enable();
+		// 	select_course.addItem(JSON.stringify(course), true);
+		// 	select_course.disable();
+		// });
+
 		select_course.load(function(callback) {
 			const url2 = 'http://localhost:8080/api/courses';
 			$.ajax({
@@ -82,7 +93,6 @@ $select_course = $('#select-course').selectize({
 	create: false,
 	render: {
 		option: function(data, escape) {
-			console.log('====', data);
 			return '<div class="option">' +
 					'<span class="title subjects">' + (data.subject) + ' ' + (data.catalog_num) + ' : ' + escape(data.title) + '</span>' +
 				'</div>';
@@ -125,7 +135,6 @@ function getCalendarData(data) {
 		var i;
 		for (i = 0; i < course.meeting_days.length;) {
 			const weekday = course.meeting_days.substring(i, i+2);
-			console.log('weekday', weekday);
 			meeting_days.push(weekdayToFullDate(weekday));
 			i = i + 2;
 		}
@@ -157,7 +166,7 @@ function loadAllSubjects() {
 		type: "GET",
 		cache: false,
 		success: function(data) {
-			console.log('yooo', data);
+			console.log(data);
 		},
 		error: function(error) {
 			console.log('Error : ', error);
