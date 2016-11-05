@@ -26,7 +26,7 @@
     "url": "https://github.com/Danqi7/courseScheduler/issues"
   },
   "homepage": "https://github.com/Danqi7/courseScheduler#readme",
-  "egines": {
+  "engines": {
     "node": "6.2.2"
-  },
+  }
 }
