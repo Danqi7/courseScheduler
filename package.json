@@ -25,8 +25,8 @@
   "bugs": {
     "url": "https://github.com/Danqi7/courseScheduler/issues"
   },
-  "homepage": "https://github.com/Danqi7/courseScheduler#readme"
+  "homepage": "https://github.com/Danqi7/courseScheduler#readme",
   "egines": {
     "node": "6.2.2"
-  }
+  },
 }
