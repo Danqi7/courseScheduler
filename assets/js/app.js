@@ -2,6 +2,7 @@ const TERM = 4640;
 const API_KEY = '3F8EQB3ziTJkYOZb';
 
 const API_ENDPOINT = 'http://api.asg.northwestern.edu';
+// const LOCAL_ENDPOINT = 
 
 var select_subject, $select_subject;
 var select_course, $select_course;
@@ -44,17 +45,7 @@ $select_subject = $('#select-subject').selectize({
 		console.log('wo', value);
 		if (!value.length) return;
 		select_course.disable();
-		// const currentValue = select_course.getValue();
 		select_course.clearOptions();
-		// console.log('getVal', currentValue);
-		// currentValue.forEach((val) => {
-		// 	const course = JSON.parse(val);
-		// 	course.obj = JSON.stringify(course);
-		// 	console.log('~~~~~', course);
-		// 	select_course.enable();
-		// 	select_course.addItem(JSON.stringify(course), true);
-		// 	select_course.disable();
-		// });
 
 		select_course.load(function(callback) {
 			const url2 = 'http://localhost:8080/api/courses';

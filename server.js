@@ -1,5 +1,6 @@
 var http = require('http');
 var util = require('util');
+var path = require('path');
 var request = require('request');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -23,6 +24,12 @@ app.use(function (req, res, next) {
 
     // Pass to next layer of middleware
     next();
+});
+
+app.use(express.static(__dirname + '/assets'));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/indexV2.0.html'));
 });
 
 app.get('/api/subjects', function(req, res) {
